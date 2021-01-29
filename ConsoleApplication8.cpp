@@ -3,28 +3,37 @@ using namespace std;
 void m() {
     const int s = 5;
     int nums[s] = { 0 };
+    int k = 0;
     for (int i = 0; i < s; i++) {
         cout << "Enter nums[" << i << "]: ";
         cin >> nums[i];
     }
     for (int i = 0; i < s - 1; i++) {
-        if (nums[i] < nums[i + 1]) {
-            if (i == 3)
-                cout << "Function increases!";
+        if (nums[i+1] == nums[i]+1) {
+            if (i == 3) {
+                k = 1;
+                cout << "Function increases!" << endl;
+            }
             continue;
         }
         else
             break;
     }
     for (int i = 0; i < s - 1; i++) {
-        if (nums[i] > nums[i + 1]) {
-            if (i == 3)
-                cout << "Function decreases!";
+        if (nums[i+1] == nums[i]-1) {
+            if (i == 3) {
+                k = 1;
+                cout << "Function decreases!" << endl;
+            }
             continue;
         }
         else
             break;
     }
+    if (k == 0) {
+        cout << "nothing is here!" << endl;
+    }
+    
 }
 int main()
 {
