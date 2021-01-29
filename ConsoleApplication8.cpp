@@ -1,7 +1,34 @@
 ﻿#include <iostream>
 using namespace std;
+void m() {
+    const int s = 5;
+    int nums[s] = { 0 };
+    for (int i = 0; i < s; i++) {
+        cout << "Enter nums[" << i << "]: ";
+        cin >> nums[i];
+    }
+    for (int i = 0; i < s - 1; i++) {
+        if (nums[i] < nums[i + 1]) {
+            if (i == 3)
+                cout << "Function increases!";
+            continue;
+        }
+        else
+            break;
+    }
+    for (int i = 0; i < s - 1; i++) {
+        if (nums[i] > nums[i + 1]) {
+            if (i == 3)
+                cout << "Function decreases!";
+            continue;
+        }
+        else
+            break;
+    }
+}
 int main()
 {
+    m();
     const int s = 5;
     int nums[s] = { 0 };
     int runningSum[s] = { 0 };
